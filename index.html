@@ -1,5 +1,498 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head><meta charset="utf-8"><title>Mindful Memory</title></head>
-<body><h1>Mindful Memory</h1><p>Site under construction.</p></body>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mindful Memory — Data Management &amp; AI Security</title>
+<meta name="description" content="Mindful Memory LLC provides energy-efficient data management and comprehensive AI security solutions for edge and cloud applications, including agentic AI frameworks and multi-modal models.">
+<link rel="canonical" href="https://mindful-memory.com/">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/favicon.png">
+<meta name="theme-color" content="#2b2a45">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Mindful Memory">
+<meta property="og:title" content="Mindful Memory — Empowering and Securing Your Database and AI">
+<meta property="og:description" content="We provide data management and Artificial Intelligence (AI) security solutions that make your business stand out.">
+<meta property="og:url" content="https://mindful-memory.com/">
+<meta property="og:image" content="https://mindful-memory.com/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Mindful Memory LLC",
+  "alternateName": "Mindful Memory",
+  "url": "https://mindful-memory.com/",
+  "logo": "https://mindful-memory.com/assets/logo.png",
+  "description": "Data management and AI security solutions for edge and cloud applications.",
+  "address": { "@type": "PostalAddress", "addressRegion": "ME", "addressCountry": "US" },
+  "employee": [
+    { "@type": "Person", "name": "Sarah Glatter", "jobTitle": "Chief Executive Officer", "sameAs": "https://www.linkedin.com/in/sarah-glatter-b93381214/" },
+    { "@type": "Person", "name": "Katherine Arsenault", "jobTitle": "Head of Operations", "sameAs": "https://www.linkedin.com/in/katie-arsenault-057301190/" },
+    { "@type": "Person", "name": "Prabuddha Chakraborty", "jobTitle": "Chief Technology Officer", "sameAs": "https://www.linkedin.com/in/sunny0/" },
+    { "@type": "Person", "name": "Swarup Bhunia", "jobTitle": "Chief Strategy Officer", "sameAs": "https://www.linkedin.com/in/swarup-bhunia-1281825/" }
+  ]
+}
+</script>
+
+<style>
+/* ---------- design tokens ---------- */
+:root{
+  --bg:#ffffff;
+  --surface:#f7f7fb;
+  --surface-2:#eeeef5;
+  --ink:#1f1e33;
+  --ink-2:#3b3a55;
+  --muted:#66657f;
+  --line:#e2e2ec;
+  --line-strong:#c9c9d8;
+  --brand:#2b2a45;
+  --brand-deep:#1b1a2e;
+  --brand-ink:#f3f3f9;
+  --accent:#4f5bd5;
+  --accent-soft:#eceefb;
+  --accent-line:#b9bff0;
+  --accent-ink:#3a45b5;
+  --teal:#0f9d8a;
+  --teal-soft:#e3f6f2;
+  --teal-line:#9fdfd2;
+  --teal-ink:#0a7a6b;
+  --shadow:0 1px 2px rgba(31,30,51,.05), 0 8px 24px -12px rgba(31,30,51,.18);
+  --shadow-lift:0 2px 4px rgba(31,30,51,.06), 0 18px 40px -18px rgba(31,30,51,.30);
+  --radius:14px;
+  --maxw:1120px;
+  --serif:"Zilla Slab",Georgia,"Times New Roman",serif;
+  --sans:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#121220;
+    --surface:#191929;
+    --surface-2:#202034;
+    --ink:#ebebf5;
+    --ink-2:#c9c9dc;
+    --muted:#9a9ab4;
+    --line:#2a2a40;
+    --line-strong:#3a3a55;
+    --brand:#0f0f1c;
+    --brand-deep:#0a0a14;
+    --brand-ink:#eeeef7;
+    --accent:#8b95ff;
+    --accent-soft:#232647;
+    --accent-line:#3d4280;
+    --accent-ink:#a3abff;
+    --teal:#3fd1ba;
+    --teal-soft:#113430;
+    --teal-line:#1f5a52;
+    --teal-ink:#3fd1ba;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px -12px rgba(0,0,0,.6);
+    --shadow-lift:0 2px 4px rgba(0,0,0,.45), 0 18px 40px -18px rgba(0,0,0,.75);
+  }
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px;-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--bg);color:var(--ink);
+  font:400 16px/1.6 var(--sans);
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+}
+img{max-width:100%;display:block}
+a{color:var(--accent-ink);text-decoration-thickness:1px;text-underline-offset:2px}
+h1,h2,h3,h4{line-height:1.2;margin:0;font-family:var(--serif);letter-spacing:-.01em}
+.wrap{max-width:var(--maxw);margin-inline:auto;padding-inline:24px}
+.skip{position:absolute;left:-9999px;top:0;background:var(--accent);color:#fff;padding:10px 16px;z-index:100;border-radius:0 0 8px 0}
+.skip:focus{left:0}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+
+/* ---------- header ---------- */
+.site-header{
+  position:sticky;top:0;z-index:50;
+  background:color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter:saturate(160%) blur(12px);
+  border-bottom:1px solid var(--line);
+}
+.site-header .wrap{display:flex;align-items:center;gap:24px;min-height:68px}
+.brand{display:flex;align-items:center;text-decoration:none;flex:0 0 auto}
+.brand picture{display:flex}
+.brand img{height:32px;width:auto}
+.brand span{position:absolute;left:-9999px}
+.site-nav{margin-left:auto;display:flex;align-items:center;gap:4px;flex-wrap:wrap;justify-content:flex-end}
+.site-nav a{
+  color:var(--ink-2);text-decoration:none;font-size:14.5px;font-weight:500;
+  padding:8px 12px;border-radius:8px;white-space:nowrap;
+}
+.site-nav a:hover{color:var(--ink);background:var(--surface-2)}
+.site-nav a.cta{background:var(--accent);color:#fff;font-weight:600}
+.site-nav a.cta:hover{background:var(--accent);filter:brightness(1.08)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .site-nav a.cta{color:#0d0f2a}}
+@media (max-width:560px){
+  .site-nav a:not(.cta){display:none}
+  .brand img{height:28px}
+}
+
+/* ---------- hero ---------- */
+.hero{
+  position:relative;isolation:isolate;overflow:hidden;
+  background:var(--brand-deep);color:var(--brand-ink);
+  padding:88px 0 84px;border-bottom:1px solid var(--line);
+}
+.hero__bg{
+  position:absolute;inset:0;z-index:-2;
+  background:url("assets/hero.jpg") center/cover no-repeat;
+  opacity:.55;
+}
+.hero::after{
+  content:"";position:absolute;inset:0;z-index:-1;
+  background:
+    linear-gradient(90deg, rgba(27,26,46,.96) 0%, rgba(27,26,46,.86) 48%, rgba(27,26,46,.45) 100%),
+    radial-gradient(700px 360px at 90% 0%, rgba(79,91,213,.28), transparent 65%);
+}
+.hero .eyebrow{color:#aeb6ff}
+.hero h1{
+  font-size:clamp(34px,5.2vw,58px);font-weight:600;max-width:17ch;
+  letter-spacing:-.015em;line-height:1.08;
+}
+.hero p.lede{
+  margin:20px 0 0;font-size:clamp(16.5px,1.8vw,20px);max-width:56ch;
+  color:rgba(243,243,249,.80);
+}
+.hero__actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:12px 20px;border-radius:10px;font-weight:600;font-size:15px;
+  text-decoration:none;border:1px solid transparent;transition:filter .15s ease, background .15s ease, border-color .15s ease;
+}
+.btn--primary{background:var(--accent);color:#fff}
+.btn--primary:hover{filter:brightness(1.08)}
+.btn--ghost{background:rgba(255,255,255,.06);color:var(--brand-ink);border-color:rgba(255,255,255,.22)}
+.btn--ghost:hover{background:rgba(255,255,255,.12)}
+.hero__facts{display:flex;flex-wrap:wrap;gap:10px;margin:36px 0 0;padding:0;list-style:none}
+.hero__facts li{
+  font-size:14.5px;font-weight:500;letter-spacing:.01em;
+  padding:8px 16px;border-radius:999px;
+  border:1px solid rgba(174,182,255,.30);background:rgba(79,91,213,.14);
+  color:rgba(243,243,249,.92);
+}
+
+/* ---------- sections ---------- */
+section{padding:80px 0}
+section + section{border-top:1px solid var(--line)}
+section.alt{background:var(--surface)}
+.section-head{margin-bottom:40px;max-width:70ch}
+.eyebrow{
+  display:inline-block;font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--accent-ink);margin-bottom:12px;
+}
+.section-head h2{font-size:clamp(28px,3.4vw,40px);font-weight:600}
+.section-head p{margin:14px 0 0;color:var(--muted);font-size:17px;max-width:62ch}
+
+/* ---------- solutions ---------- */
+.solutions{display:grid;gap:24px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.solution{
+  position:relative;background:var(--bg);border:1px solid var(--line);border-radius:var(--radius);
+  padding:30px 30px 28px;box-shadow:var(--shadow);
+  display:flex;flex-direction:column;gap:14px;
+}
+.solution::before{
+  content:"";position:absolute;left:0;right:0;top:0;height:4px;border-radius:var(--radius) var(--radius) 0 0;
+  background:var(--accent);
+}
+.solution--security::before{background:var(--teal)}
+.solution__icon{
+  width:48px;height:48px;border-radius:12px;display:grid;place-items:center;
+  background:var(--accent-soft);color:var(--accent-ink);border:1px solid var(--accent-line);
+}
+.solution--security .solution__icon{background:var(--teal-soft);color:var(--teal-ink);border-color:var(--teal-line)}
+.solution__icon svg{width:24px;height:24px}
+.solution h3{font-size:24px;font-weight:600}
+.solution p{margin:0;color:var(--muted);font-size:15.5px}
+.solution ul{margin:6px 0 0;padding:0;list-style:none;display:grid;gap:10px}
+.solution li{
+  position:relative;padding-left:30px;font-size:15.5px;color:var(--ink-2);line-height:1.5;
+}
+.solution li::before{
+  content:"";position:absolute;left:0;top:4px;width:18px;height:18px;border-radius:50%;
+  background:var(--accent-soft);border:1px solid var(--accent-line);
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233a45b5' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><path d='M5 12.5l4.5 4.5L19 7.5'/></svg>");
+  background-size:11px;background-position:center;background-repeat:no-repeat;
+}
+.solution--security li::before{
+  background-color:var(--teal-soft);border-color:var(--teal-line);
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230a7a6b' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><path d='M5 12.5l4.5 4.5L19 7.5'/></svg>");
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]) .solution li::before{
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23a3abff' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><path d='M5 12.5l4.5 4.5L19 7.5'/></svg>");
+  }
+  :root:not([data-theme="light"]) .solution--security li::before{
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233fd1ba' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><path d='M5 12.5l4.5 4.5L19 7.5'/></svg>");
+  }
+}
+
+/* ---------- team ---------- */
+.team-grid{display:grid;gap:24px;grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
+.member{
+  background:var(--bg);border:1px solid var(--line);border-radius:var(--radius);
+  padding:26px 22px 22px;text-align:center;display:flex;flex-direction:column;
+  transition:border-color .18s ease, box-shadow .18s ease, transform .18s ease;
+}
+.member:hover{border-color:var(--line-strong);box-shadow:var(--shadow);transform:translateY(-2px)}
+.member__photo{
+  width:140px;height:140px;object-fit:cover;border-radius:50%;
+  margin:0 auto 16px;background:var(--surface-2);
+  border:3px solid var(--bg);box-shadow:0 0 0 1px var(--line);
+}
+.member h3{font-size:21px;font-weight:600}
+.member .role{margin:6px 0 0;font-size:13.5px;font-weight:600;color:var(--accent-ink);letter-spacing:.01em}
+.member .bio{margin:14px 0 0;font-size:14.5px;color:var(--muted);line-height:1.55;text-align:left;flex:1}
+.member .link{
+  display:inline-flex;align-items:center;gap:7px;margin:18px auto 0;font-size:13px;font-weight:600;
+  text-decoration:none;color:var(--ink-2);
+  border:1px solid var(--line-strong);border-radius:999px;padding:6px 14px;
+}
+.member .link svg{width:14px;height:14px}
+.member .link:hover{border-color:var(--accent);color:var(--accent-ink);background:var(--accent-soft)}
+
+/* ---------- partners ---------- */
+.partners{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:20px}
+.partners li a{
+  display:flex;align-items:center;justify-content:center;
+  min-width:260px;padding:26px 36px;border-radius:12px;
+  background:#fff;border:1px solid var(--line);box-shadow:var(--shadow);
+  transition:border-color .18s ease, box-shadow .18s ease;
+}
+.partners li a:hover{border-color:var(--line-strong);box-shadow:var(--shadow-lift)}
+.partners img{height:46px;width:auto}
+.partners .name{position:absolute;left:-9999px}
+
+/* ---------- contact ---------- */
+.contact{display:grid;gap:28px;grid-template-columns:1.1fr .9fr;align-items:start}
+.contact__card{
+  background:var(--brand);color:var(--brand-ink);border-radius:var(--radius);
+  padding:36px;box-shadow:var(--shadow-lift);
+  background-image:radial-gradient(500px 260px at 100% 0%, rgba(79,91,213,.35), transparent 65%);
+}
+.contact__card h3{font-size:28px;font-weight:600}
+.contact__card p{margin:14px 0 0;color:rgba(243,243,249,.78);font-size:16px;max-width:46ch}
+.contact__card .btn{margin-top:26px}
+.contact__aside h3{font-size:20px;font-weight:600;margin-bottom:10px}
+.contact__aside p{margin:0 0 18px;color:var(--muted);font-size:15.5px}
+.contact__aside ul{margin:0;padding:0;list-style:none;display:grid;gap:10px}
+.contact__aside li a{
+  display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink-2);font-weight:500;font-size:15px;
+}
+.contact__aside li a:hover{color:var(--accent-ink)}
+.contact__aside svg{width:16px;height:16px;color:var(--accent-ink);flex:0 0 auto}
+@media (max-width:820px){.contact{grid-template-columns:1fr}}
+
+/* ---------- footer ---------- */
+.site-footer{border-top:1px solid var(--line);padding:36px 0;background:var(--surface)}
+.site-footer .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:16px 28px}
+.site-footer img{height:26px;width:auto}
+.site-footer p{margin:0;color:var(--muted);font-size:13.5px}
+.site-footer nav{margin-left:auto;display:flex;flex-wrap:wrap;gap:4px 18px}
+.site-footer nav a{color:var(--muted);text-decoration:none;font-size:13.5px}
+.site-footer nav a:hover{color:var(--ink)}
+@media (max-width:640px){.site-footer nav{margin-left:0}}
+
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .member,.btn,.partners li a{transition:none}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Mindful Memory home">
+      <picture>
+        <source srcset="assets/logo-light.png" media="(prefers-color-scheme: dark)">
+        <img src="assets/logo.png" alt="Mindful Memory" width="1106" height="146">
+      </picture>
+      <span>Mindful Memory</span>
+    </a>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="#solutions">Solutions</a>
+      <a href="#team">Team</a>
+      <a href="#partners">Partners</a>
+      <a class="cta" href="#contact">Get in touch</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="hero" id="top" aria-labelledby="hero-title">
+  <div class="hero__bg" role="presentation"></div>
+  <div class="wrap">
+    <span class="eyebrow">Mindful Memory LLC</span>
+    <h1 id="hero-title">Empowering and Securing Your Database and AI</h1>
+    <p class="lede">We provide data management and Artificial Intelligence (AI) security solutions that make your business stand out.</p>
+    <div class="hero__actions">
+      <a class="btn btn--primary" href="#solutions">Explore our solutions</a>
+      <a class="btn btn--ghost" href="#contact">Contact us</a>
+    </div>
+    <ul class="hero__facts" aria-label="Highlights">
+      <li>Energy-efficient data management</li>
+      <li>Edge and cloud ready</li>
+      <li>Security for agentic and multi-modal AI</li>
+    </ul>
+  </div>
+</section>
+
+<section id="solutions" aria-labelledby="solutions-title">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">About Mindful Memory</span>
+      <h2 id="solutions-title">Two product lines, one goal: data and AI you can trust</h2>
+      <p>Mindful Memory builds the memory layer and the security layer that modern AI systems depend on, from constrained edge devices to cloud deployments.</p>
+    </div>
+    <div class="solutions">
+      <article class="solution solution--data">
+        <div class="solution__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5.5" rx="8" ry="3"/><path d="M4 5.5v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6"/><path d="M4 11.5v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6"/></svg>
+        </div>
+        <h3>Data management solutions</h3>
+        <p>High-performance storage and search built to run where your data lives.</p>
+        <ul>
+          <li>Highly energy efficient</li>
+          <li>Support high throughput store/search operations</li>
+          <li>Compatible with edge and cloud applications</li>
+        </ul>
+      </article>
+      <article class="solution solution--security">
+        <div class="solution__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5l8 3v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10v-6l8-3z"/><path d="M9 12l2 2 4-4.5"/></svg>
+        </div>
+        <h3>AI security solutions</h3>
+        <p>Protection that covers the whole AI stack, including the newest classes of models and agents.</p>
+        <ul>
+          <li>Comprehensive</li>
+          <li>Support for Agentic AI Frameworks</li>
+          <li>Multi-modal Models</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="team" class="alt" aria-labelledby="team-title">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Meet the Team</span>
+      <h2 id="team-title">Leadership</h2>
+      <p>Researchers and engineers with deep roots in secure hardware, trustworthy AI, and low-power IoT systems.</p>
+    </div>
+    <div class="team-grid">
+      <article class="member">
+        <img class="member__photo" src="assets/team/sarah-glatter.jpg" alt="Portrait of Sarah Glatter" width="640" height="640" loading="lazy">
+        <h3>Sarah Glatter</h3>
+        <p class="role">Chief Executive Officer (CEO)</p>
+        <p class="bio">Ms. Sarah Glatter is a computer engineering researcher and CEO of Mindful Memory. She holds B.S. and M.S. degrees from the University of Maine and is pursuing a Ph.D. in Electrical and Computer Engineering there. Her work focuses on secure, trustworthy AI and accelerator systems.</p>
+        <a class="link" href="https://www.linkedin.com/in/sarah-glatter-b93381214/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+          LinkedIn
+        </a>
+      </article>
+      <article class="member">
+        <img class="member__photo" src="assets/team/katie-arsenault.jpg" alt="Portrait of Katie Arsenault" width="640" height="640" loading="lazy">
+        <h3>Katie Arsenault</h3>
+        <p class="role">Head of Operations</p>
+        <p class="bio">Ms. Katherine Arsenault is the Head of Operations at Mindful Memory. She holds an M.S. in Data Science and Engineering from the University of Maine, with a focus on AI and IoT. She also holds a B.S. in Business Information Systems, Security Management, and Business Management.</p>
+        <a class="link" href="https://www.linkedin.com/in/katie-arsenault-057301190/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+          LinkedIn
+        </a>
+      </article>
+      <article class="member">
+        <img class="member__photo" src="assets/team/prabuddha-chakraborty.jpg" alt="Portrait of Prabuddha Chakraborty" width="640" height="640" loading="lazy">
+        <h3>Prabuddha Chakraborty</h3>
+        <p class="role">Chief Technology Officer (CTO)</p>
+        <p class="bio">Dr. Prabuddha Chakraborty is the Chief Technology Officer of Mindful Memory LLC. He earned his PhD in Electrical and Computer Engineering from the University of Florida and received the prestigious IEEE TTTC's E. J. McCluskey Best Doctoral Thesis Award. His expertise spans AI and IoT, with numerous patents and publications.</p>
+        <a class="link" href="https://www.linkedin.com/in/sunny0/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+          LinkedIn
+        </a>
+      </article>
+      <article class="member">
+        <img class="member__photo" src="assets/team/swarup-bhunia.jpg" alt="Portrait of Swarup Bhunia" width="640" height="640" loading="lazy">
+        <h3>Swarup Bhunia</h3>
+        <p class="role">Chief Strategy Officer (CSO)</p>
+        <p class="bio">Dr. Swarup Bhunia, Fellow of IEEE, is the Chief Strategy Officer at Mindful Memory LLC. He holds a Ph.D. from Purdue University and has over two decades of experience in IoT and low-power devices. With over 200 publications, he has earned many awards, including the Semiconductor Research Corporation Inventor Recognition Award.</p>
+        <a class="link" href="https://www.linkedin.com/in/swarup-bhunia-1281825/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+          LinkedIn
+        </a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="partners" aria-labelledby="partners-title">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Partners</span>
+      <h2 id="partners-title">Who we work with</h2>
+    </div>
+    <ul class="partners">
+      <li><a href="https://www.highbyte.com/" target="_blank" rel="noopener"><img src="assets/highbyte.png" alt="HighByte" width="910" height="243" loading="lazy"></a></li>
+    </ul>
+  </div>
+</section>
+
+<section id="contact" class="alt" aria-labelledby="contact-title">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Contact Us</span>
+      <h2 id="contact-title">Get in touch</h2>
+    </div>
+    <div class="contact">
+      <div class="contact__card">
+        <h3>Questions or comments?</h3>
+        <p>We know that our clients have unique needs. Send us a message, and we will get back to you soon.</p>
+        <a class="btn btn--primary" href="mailto:info@mindful-memory.com?subject=Inquiry%20from%20mindful-memory.com">Send us an email</a>
+      </div>
+      <div class="contact__aside">
+        <h3>Connect with the team</h3>
+        <p>Reach any of our leadership directly on LinkedIn.</p>
+        <ul>
+          <li><a href="https://www.linkedin.com/in/sarah-glatter-b93381214/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>Sarah Glatter, CEO</a></li>
+          <li><a href="https://www.linkedin.com/in/katie-arsenault-057301190/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>Katie Arsenault, Head of Operations</a></li>
+          <li><a href="https://www.linkedin.com/in/sunny0/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>Prabuddha Chakraborty, CTO</a></li>
+          <li><a href="https://www.linkedin.com/in/swarup-bhunia-1281825/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>Swarup Bhunia, CSO</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <picture>
+      <source srcset="assets/logo-light.png" media="(prefers-color-scheme: dark)">
+      <img src="assets/logo.png" alt="Mindful Memory" width="1106" height="146">
+    </picture>
+    <p>Copyright &copy; 2026 Mindful Memory LLC. All rights reserved.</p>
+    <nav aria-label="Footer">
+      <a href="#solutions">Solutions</a>
+      <a href="#team">Team</a>
+      <a href="#partners">Partners</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</footer>
+</body>
 </html>
