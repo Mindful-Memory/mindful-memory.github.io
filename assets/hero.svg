@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 520" width="640" height="520" role="img" aria-labelledby="t">
+  <title id="t">Abstract illustration of a memory chip connected to a neural network and protected by a shield</title>
+  <defs>
+    <linearGradient id="chip" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2f3058"/><stop offset="1" stop-color="#1a1a30"/>
+    </linearGradient>
+    <linearGradient id="cell" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#8b95ff"/><stop offset="1" stop-color="#4f5bd5"/>
+    </linearGradient>
+    <linearGradient id="cellTeal" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#7fe6d6"/><stop offset="1" stop-color="#1fb5a0"/>
+    </linearGradient>
+    <linearGradient id="shield" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3fd1ba" stop-opacity=".95"/><stop offset="1" stop-color="#0f9d8a" stop-opacity=".85"/>
+    </linearGradient>
+    <radialGradient id="glowI" cx=".5" cy=".5" r=".5">
+      <stop offset="0" stop-color="#6c78ff" stop-opacity=".55"/><stop offset="1" stop-color="#6c78ff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowT" cx=".5" cy=".5" r=".5">
+      <stop offset="0" stop-color="#3fd1ba" stop-opacity=".45"/><stop offset="1" stop-color="#3fd1ba" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="1.2"/></filter>
+    <radialGradient id="fade" cx=".5" cy=".55" r=".55">
+      <stop offset="0" stop-color="#fff"/><stop offset=".7" stop-color="#fff" stop-opacity=".6"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </radialGradient>
+    <mask id="gridMask"><rect width="640" height="520" fill="url(#fade)"/></mask>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M32 0H0V32" fill="none" stroke="#ffffff" stroke-opacity=".06" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <!-- backdrop grid + glows -->
+  <rect width="640" height="520" fill="url(#grid)" mask="url(#gridMask)"/>
+  <circle cx="300" cy="320" r="190" fill="url(#glowI)"/>
+  <circle cx="490" cy="390" r="128" fill="url(#glowT)"/>
+
+  <!-- neural graph (brain layer) -->
+  <g stroke="#aeb6ff" stroke-opacity=".55" stroke-width="1.5" fill="none" stroke-linecap="round">
+    <path d="M120 96 L190 60 L270 88 L350 48 L430 92 L510 64"/>
+    <path d="M120 96 L160 150 L270 88 M190 60 L160 150 M270 88 L300 140 L350 48 M300 140 L430 92 L470 142 L510 64 M160 150 L300 140 L470 142"/>
+    <path d="M160 150 L220 190 L300 140 M300 140 L380 190 L470 142 M220 190 L380 190"/>
+    <!-- descent into chip -->
+    <path d="M220 190 L250 240 M300 140 L300 240 M380 190 L350 240" stroke="#8b95ff" stroke-opacity=".8"/>
+  </g>
+  <g fill="#aeb6ff">
+    <circle cx="120" cy="96" r="5"/><circle cx="190" cy="60" r="6"/><circle cx="270" cy="88" r="5"/>
+    <circle cx="350" cy="48" r="7" fill="#dfe3ff"/><circle cx="430" cy="92" r="5"/><circle cx="510" cy="64" r="6"/>
+    <circle cx="160" cy="150" r="6"/><circle cx="300" cy="140" r="8" fill="#dfe3ff"/><circle cx="470" cy="142" r="6"/>
+    <circle cx="220" cy="190" r="5"/><circle cx="380" cy="190" r="5"/>
+  </g>
+  <!-- node halos -->
+  <g fill="none" stroke="#8b95ff" stroke-opacity=".35" stroke-width="1">
+    <circle cx="350" cy="48" r="14"/><circle cx="300" cy="140" r="16"/>
+  </g>
+
+  <!-- chip pins -->
+  <g stroke="#9aa3ff" stroke-opacity=".7" stroke-width="6" stroke-linecap="round">
+    <path d="M170 262v-18 M210 262v-18 M250 262v-18 M290 262v-18 M330 262v-18 M370 262v-18 M410 262v-18"/>
+    <path d="M170 418v18 M210 418v18 M250 418v18 M290 418v18 M330 418v18 M370 418v18 M410 418v18"/>
+    <path d="M142 290h-18 M142 330h-18 M142 370h-18 M142 410h-18"/>
+    <path d="M440 290h18 M440 330h18 M440 370h18 M440 410h18"/>
+  </g>
+  <!-- trace lines leaving pins -->
+  <g stroke="#8b95ff" stroke-opacity=".4" stroke-width="1.5" fill="none" stroke-linecap="round">
+    <path d="M124 290H70 L40 320 M124 330H60 M124 370H80 L50 400 M124 410H90"/>
+    <path d="M458 290H540 L570 260 M458 330H560 M458 370H520 L550 400 M458 410H500"/>
+    <path d="M170 436v30 M210 436v44 L240 510 M250 436v22 M290 436v48"/>
+  </g>
+  <g fill="#8b95ff" fill-opacity=".7">
+    <circle cx="40" cy="320" r="3"/><circle cx="60" cy="330" r="3"/><circle cx="50" cy="400" r="3"/><circle cx="90" cy="410" r="3"/>
+    <circle cx="570" cy="260" r="3"/><circle cx="560" cy="330" r="3"/><circle cx="550" cy="400" r="3"/><circle cx="500" cy="410" r="3"/>
+    <circle cx="170" cy="466" r="3"/><circle cx="240" cy="510" r="3"/><circle cx="250" cy="458" r="3"/><circle cx="290" cy="484" r="3"/>
+  </g>
+
+  <!-- chip body -->
+  <rect x="142" y="262" width="298" height="156" rx="18" fill="url(#chip)" stroke="#8b95ff" stroke-opacity=".75" stroke-width="2"/>
+  <rect x="156" y="276" width="270" height="128" rx="12" fill="none" stroke="#ffffff" stroke-opacity=".12"/>
+
+  <!-- memory cell array -->
+  <g>
+    <rect x="172" y="292" width="24" height="18" rx="4" fill="url(#cell)"/>
+    <rect x="204" y="292" width="24" height="18" rx="4" fill="url(#cell)" fill-opacity=".55"/>
+    <rect x="236" y="292" width="24" height="18" rx="4" fill="url(#cell)"/>
+    <rect x="268" y="292" width="24" height="18" rx="4" fill="url(#cellTeal)"/>
+    <rect x="300" y="292" width="24" height="18" rx="4" fill="url(#cell)" fill-opacity=".35"/>
+    <rect x="332" y="292" width="24" height="18" rx="4" fill="url(#cell)"/>
+    <rect x="364" y="292" width="24" height="18" rx="4" fill="url(#cell)" fill-opacity=".55"/>
+
+    <rect x="172" y="318" width="24" height="18" rx="4" fill="url(#cell)" fill-opacity=".35"/>
+    <rect x="204" y="318" width="24" height="18" rx="4" fill="url(#cell)"/>
+    <rect x="236" y="318" width="24" height="18" rx="4" fill="url(#cellTeal)"/>
+    <rect x="268" y="318" width="24" height="18" rx="4" fill="url(#cell)" fill-opacity=".55"/>
+    <rect x="300" y="318" width="24" height="18" rx="4" fill="url(#cell)"/>
+    <rect x="332" y="318" width="24" height="18" rx="4" fill="url(#cell)" fill-opacity=".35"/>
+    <rect x="364" y="318" width="24" height="18" rx="4" fill="url(#cellTeal)"/>
+
+    <rect x="172" y="344" width="24" height="18" rx="4" fill="url(#cell)"/>
+    <rect x="204" y="344" width="24" height="18" rx="4" fill="url(#cell)" fill-opacity=".55"/>
+    <rect x="236" y="344" width="24" height="18" rx="4" fill="url(#cell)" fill-opacity=".35"/>
+    <rect x="268" y="344" width="24" height="18" rx="4" fill="url(#cell)"/>
+    <rect x="300" y="344" width="24" height="18" rx="4" fill="url(#cellTeal)"/>
+    <rect x="332" y="344" width="24" height="18" rx="4" fill="url(#cell)" fill-opacity=".55"/>
+    <rect x="364" y="344" width="24" height="18" rx="4" fill="url(#cell)"/>
+
+    <rect x="172" y="370" width="24" height="18" rx="4" fill="url(#cell)" fill-opacity=".55"/>
+    <rect x="204" y="370" width="24" height="18" rx="4" fill="url(#cellTeal)"/>
+    <rect x="236" y="370" width="24" height="18" rx="4" fill="url(#cell)"/>
+    <rect x="268" y="370" width="24" height="18" rx="4" fill="url(#cell)" fill-opacity=".35"/>
+    <rect x="300" y="370" width="24" height="18" rx="4" fill="url(#cell)" fill-opacity=".55"/>
+    <rect x="332" y="370" width="24" height="18" rx="4" fill="url(#cell)"/>
+    <rect x="364" y="370" width="24" height="18" rx="4" fill="url(#cell)" fill-opacity=".35"/>
+  </g>
+  <!-- brain mark on chip corner -->
+  <g transform="translate(396 292)" fill="none" stroke="#dfe3ff" stroke-opacity=".8" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 2c-4 0-7 3-7 6 0 1 0 2 1 3-2 1-3 3-3 5 0 3 3 5 6 5h3V2z"/>
+    <path d="M12 2c4 0 7 3 7 6 0 1 0 2-1 3 2 1 3 3 3 5 0 3-3 5-6 5h-3V2z"/>
+  </g>
+
+  <!-- shield (security) -->
+  <g transform="translate(462 352)">
+    <circle cx="48" cy="56" r="78" fill="url(#glowT)"/>
+    <path d="M48 6 L100 26 V70 C100 108 76 134 48 146 C20 134 -4 108 -4 70 V26 Z" fill="#111124" stroke="url(#shield)" stroke-width="4" stroke-linejoin="round"/>
+    <path d="M48 20 L88 36 V70 C88 100 70 120 48 130 C26 120 8 100 8 70 V36 Z" fill="url(#shield)" fill-opacity=".14"/>
+    <path d="M28 74 L42 88 L70 56" fill="none" stroke="#7fe6d6" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- lock on shield to chip -->
+    <path d="M-4 70 H-22" stroke="#3fd1ba" stroke-opacity=".7" stroke-width="3" stroke-linecap="round"/>
+  </g>
+
+  <!-- floating bits -->
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12" fill="#aeb6ff" fill-opacity=".45">
+    <text x="40" y="40">0110</text><text x="560" y="130">1011</text><text x="62" y="470">1001</text><text x="586" y="470">0101</text><text x="330" y="500">1101</text>
+  </g>
+</svg>

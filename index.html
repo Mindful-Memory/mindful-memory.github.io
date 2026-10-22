@@ -143,18 +143,17 @@ h1,h2,h3,h4{line-height:1.2;margin:0;font-family:var(--serif);letter-spacing:-.0
 .hero{
   position:relative;isolation:isolate;overflow:hidden;
   background:var(--brand-deep);color:var(--brand-ink);
-  padding:88px 0 84px;border-bottom:1px solid var(--line);
+  padding:72px 0 64px;border-bottom:1px solid var(--line);
+  background-image:
+    radial-gradient(800px 420px at 85% 10%, rgba(79,91,213,.30), transparent 65%),
+    radial-gradient(500px 300px at 0% 100%, rgba(63,209,186,.14), transparent 60%);
 }
-.hero__bg{
-  position:absolute;inset:0;z-index:-2;
-  background:url("assets/hero.jpg") center/cover no-repeat;
-  opacity:.55;
-}
-.hero::after{
-  content:"";position:absolute;inset:0;z-index:-1;
-  background:
-    linear-gradient(90deg, rgba(27,26,46,.96) 0%, rgba(27,26,46,.86) 48%, rgba(27,26,46,.45) 100%),
-    radial-gradient(700px 360px at 90% 0%, rgba(79,91,213,.28), transparent 65%);
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:48px;align-items:center}
+.hero__art{display:flex;justify-content:center;align-items:center;min-width:0}
+.hero__art svg,.hero__art img{width:100%;max-width:560px;height:auto}
+@media (max-width:900px){
+  .hero .wrap{grid-template-columns:1fr;gap:36px}
+  .hero__art img{max-width:440px}
 }
 .hero .eyebrow{color:#aeb6ff}
 .hero h1{
@@ -334,8 +333,8 @@ section.alt{background:var(--surface)}
 <main id="main">
 
 <section class="hero" id="top" aria-labelledby="hero-title">
-  <div class="hero__bg" role="presentation"></div>
   <div class="wrap">
+    <div class="hero__copy">
     <span class="eyebrow">Mindful Memory LLC</span>
     <h1 id="hero-title">Empowering and Securing Your Database and AI</h1>
     <p class="lede">We provide data management and Artificial Intelligence (AI) security solutions that make your business stand out.</p>
@@ -348,6 +347,10 @@ section.alt{background:var(--surface)}
       <li>Edge and cloud ready</li>
       <li>Security for agentic and multi-modal AI</li>
     </ul>
+    </div>
+    <div class="hero__art">
+      <img src="assets/hero.svg" alt="" width="640" height="520" fetchpriority="high">
+    </div>
   </div>
 </section>
 
